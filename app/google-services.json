@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1006040806377",
+    "project_id": "pianomaster-de5d8",
+    "storage_bucket": "pianomaster-de5d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006040806377:android:d77f79bd5dfc80f5849178",
+        "android_client_info": {
+          "package_name": "com.example.pianomaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaoLGm1Zb_Hw1hrndF9nJ7dCywN8UaDG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
