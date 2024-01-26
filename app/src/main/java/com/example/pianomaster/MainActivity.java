@@ -2,6 +2,8 @@ package com.example.pianomaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
@@ -134,11 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         a5sh = soundPool.load(this, R.raw.a5sh, 1);
         b5_ = soundPool.load(this, R.raw.b5, 1);
 
-
-
-
     }
-
     @Override
     public void onClick(View view) {
 
@@ -283,9 +281,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.b15:
                 soundPool.play(a5sh, 1, 1, 0, 0, 1);
                 break;
-
-
-
         }
 
     }
