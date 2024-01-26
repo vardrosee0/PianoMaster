@@ -19,18 +19,6 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/ex2"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:background="#8AFF3191"
-                android:drawableRight="@drawable/baseline_music_note_24"
-                android:drawableTint="#EA4444"
-                android:text="Exercise 2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#682323" />
-
-            <Button
                 android:id="@+id/k1"
                 style="@style/white_key" />
 
@@ -229,41 +217,6 @@
                 style="@style/black_key"
                 android:layout_toEndOf="@id/k20"/>
 
-            <Button
-                android:id="@+id/ex1"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:background="#8AFF31E3"
-                android:drawableRight="@drawable/baseline_music_note_24"
-                android:drawableTint="#EA4444"
-                android:text="Exercise 1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#682323" />
-
-            <Button
-                android:id="@+id/ex3"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:background="#8AB031FF"
-                android:drawableRight="@drawable/baseline_music_note_24"
-                android:drawableTint="#EA4444"
-                android:text="Exercise 3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#682323" />
-
-            <Button
-                android:id="@+id/ex4"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="80dp"
-                android:background="#8A31FFFF"
-                android:drawableRight="@drawable/baseline_music_note_24"
-                android:drawableTint="#EA4444"
-                android:text="Exercise 4"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#682323" />
 
             <ImageView
                 android:id="@+id/imageView"

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/piano_background2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        tools:context=".ExercisesActivity"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/ex1"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/exercise_1"
+            android:text="Exercise 1"
+            android:onClick="goToAnActivity"
+            android:textColor="#3e2723" />
+
+        <Button
+            android:id="@+id/ex2"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/exercise_1"
+            android:text="Exercise 2"
+            android:onClick="goToAnActivity"
+            android:textColor="#3e2723" />
+
+
+        <Button
+            android:id="@+id/ex3"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/exercise_1"
+            android:text="Exercise 3"
+            android:onClick="goToAnActivity"
+            android:textColor="#3e2723" />
+
+
+        <Button
+            android:id="@+id/ex4"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/exercise_1"
+            android:text="Exercise 4"
+            android:onClick="goToAnActivity"
+            android:textColor="#3e2723" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Try one of these exercises."
+        android:textSize="50dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
+
+
