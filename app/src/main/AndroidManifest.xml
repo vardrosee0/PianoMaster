@@ -19,7 +19,6 @@
             android:name=".ExercisesActivity"
             android:exported="true"
             android:screenOrientation="landscape"
-            android:label="@string/title_activity_exercises"
             android:theme="@style/Theme.PianoMaster" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
