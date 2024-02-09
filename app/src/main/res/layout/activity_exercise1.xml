@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pink"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="top|center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:visibility="visible" />
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/k1"
+                style="@style/white_key" />
+
+            <Button
+                android:id="@+id/k2"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k1" />
+
+            <Button
+                android:id="@+id/k3"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k2" />
+
+            <Button
+                android:id="@+id/k4"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k3" />
+
+            <Button
+                android:id="@+id/k5"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k4" />
+
+            <Button
+                android:id="@+id/k6"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k5" />
+
+            <Button
+                android:id="@+id/k7"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k6" />
+
+            <Button
+                android:id="@+id/k8"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k7" />
+
+            <Button
+                android:id="@+id/k9"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k8" />
+
+            <Button
+                android:id="@+id/k10"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k9" />
+
+            <Button
+                android:id="@+id/k11"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k10" />
+
+            <Button
+                android:id="@+id/k12"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k11" />
+
+            <Button
+                android:id="@+id/k13"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k12" />
+
+            <Button
+                android:id="@+id/k14"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k13" />
+
+            <Button
+                android:id="@+id/k15"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k14" />
+
+            <Button
+                android:id="@+id/k16"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k15" />
+
+            <Button
+                android:id="@+id/k17"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k16" />
+
+            <Button
+                android:id="@+id/k18"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k17" />
+
+            <Button
+                android:id="@+id/k19"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k18" />
+
+            <Button
+                android:id="@+id/k20"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k19" />
+
+            <Button
+                android:id="@+id/k21"
+                style="@style/white_key"
+                android:layout_marginStart="2dp"
+                android:layout_toEndOf="@id/k20" />
+
+            <Button
+                android:id="@+id/b1"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k1" />
+
+            <Button
+                android:id="@+id/b2"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k2" />
+
+            <Button
+                android:id="@+id/b3"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k4" />
+
+            <Button
+                android:id="@+id/b4"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k5" />
+
+            <Button
+                android:id="@+id/b5"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k6" />
+
+            <Button
+                android:id="@+id/b6"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k8" />
+
+            <Button
+                android:id="@+id/b7"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k9" />
+
+            <Button
+                android:id="@+id/b8"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k11" />
+
+            <Button
+                android:id="@+id/b9"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k12" />
+
+            <Button
+                android:id="@+id/b10"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k13" />
+
+            <Button
+                android:id="@+id/b11"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k15" />
+
+            <Button
+                android:id="@+id/b12"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k16" />
+
+            <Button
+                android:id="@+id/b13"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k18" />
+
+            <Button
+                android:id="@+id/b14"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k19" />
+
+            <Button
+                android:id="@+id/b15"
+                style="@style/black_key"
+                android:layout_toEndOf="@id/k20" />
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="750dp"
+                app:srcCompat="@drawable/coin" />
+
+
+        </RelativeLayout>
+
+
+    </HorizontalScrollView>
+
+</RelativeLayout>

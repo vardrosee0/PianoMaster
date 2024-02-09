@@ -16,7 +16,7 @@ public class ExercisesActivity extends AppCompatActivity {
     }
 
     public void goToAnActivity(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Exercise1Activity.class);
         startActivity(intent);
     }
 }
