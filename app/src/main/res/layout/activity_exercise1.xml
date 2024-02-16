@@ -8,14 +8,7 @@
     android:orientation="horizontal"
     android:padding="16dp"
     android:gravity="top|center"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:visibility="visible" />
+    tools:context=".Exercise1Activity">
 
 
     <HorizontalScrollView
@@ -226,17 +219,48 @@
                 android:layout_toEndOf="@id/k20" />
 
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="750dp"
-                app:srcCompat="@drawable/coin" />
 
 
         </RelativeLayout>
 
 
     </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/congrats"
+        android:layout_marginLeft="650dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/n_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="650dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Listen carefully and play the melody on the piano" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/pinky"
+        android:text="Check" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mozart - Eine kleine Nachtmusik"
+        android:textColor="#670765"
+        android:textSize="22sp" />
 
 </RelativeLayout>
