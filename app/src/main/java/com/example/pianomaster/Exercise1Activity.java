@@ -1,6 +1,7 @@
 package com.example.pianomaster;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,13 +24,13 @@ import java.util.Queue;
 
 public class Exercise1Activity extends AppCompatActivity implements View.OnClickListener{
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19;
-    TextView notes;
+    TextView notes, checking;
     int n = 18;
     Button b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, b34, b35, b36;
     int i = 0, a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
     int d4, d4sh, d5, d5sh, e3, e4, e5, f3, f3sh, f4, f4sh, f5, f5sh, g3, g3sh, g4, g4sh, g5, g5sh;
     private SoundPool soundPool;
-    Button ex1;
+    Button ex1, check_button;
     String[] sequence1 = {"g4", "d4", "g4", "d4", "g4", "d4", "g4", "b4_", "d5", "c5", "a4", "c5",
             "a4", "c5", "a4", "f4sh", "a4", "d4"};
 
@@ -43,6 +44,9 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
 
         notes = findViewById(R.id.n_notes);
         notes.setText("Number of notes left: " + n);
+
+        checking = findViewById(R.id.congrats);
+        check_button = findViewById(R.id.check);
 
         b1 = findViewById(R.id.k1);
         b2 = findViewById(R.id.b1);
@@ -180,6 +184,22 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
         playSound(a4, 7000);
         playSound(d4, 7200);
 
+        check_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Arrays.equals(sequence1, sequence2)) {
+                    checking.setText("Well done! You got it right.");
+                } else {
+                    checking.setText("Oops... Try again!");
+                }
+            }
+        });
+
+    }
+
+    public void goToAnActivity(View view) {
+        Intent intent = new Intent(this, ExercisesActivity.class);
+        startActivity(intent);
     }
 
 
@@ -199,27 +219,17 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
         if (i < 18) {
 
             sequence2[i] = note;
-            Toast.makeText(Exercise1Activity.this,
-                    Boolean.toString(Arrays.equals(sequence2, sequence1)), Toast.LENGTH_SHORT).show();
             i = i + 1;
             n = n - 1;
             notes.setText("Number of notes left: " + n);
         }
     }
+
+
     // notes playing
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
-            case R.id.check:
-                if (Arrays.equals(sequence2, sequence1)) {
-                    Toast.makeText(Exercise1Activity.this,
-                            "Well done!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(Exercise1Activity.this,
-                            "idk", Toast.LENGTH_SHORT).show();
-                }
-                break;
             case R.id.k1:
                 soundPool.play(c3, 1, 1, 0, 0, 1);
                 break;
