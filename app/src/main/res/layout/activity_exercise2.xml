@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     android:padding="16dp"
     android:gravity="top|center"
-    tools:context=".Exercise1Activity">
+    tools:context=".Exercise2Activity">
 
 
     <HorizontalScrollView
@@ -260,9 +260,9 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="420dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginTop="5dp"
-        android:text="C major"
+        android:text="Mozart - Eine kleine Nachtmusik"
         android:textColor="#670765"
         android:textSize="22sp" />
 

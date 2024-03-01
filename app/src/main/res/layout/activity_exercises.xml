@@ -4,71 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
     android:background="@drawable/piano_background3"
     tools:context=".ExercisesActivity"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/ex1"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/exercise_1"
+        android:onClick="goToAnExercise1"
+        android:text="Exercise 1"
+        android:textColor="#3e2723" />
 
-        <Button
-            android:id="@+id/ex1"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/exercise_1"
-            android:onClick="goToAnActivity"
-            android:text="Exercise 1"
-            android:textColor="#3e2723" />
-
-        <Button
-            android:id="@+id/ex2"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/exercise_1"
-            android:text="Exercise 2"
-            android:textColor="#3e2723" />
+    <Button
+        android:id="@+id/ex2"
+        android:layout_toRightOf="@id/ex1"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/exercise_1"
+        android:onClick="goToAnExercise2"
+        android:text="Exercise 2"
+        android:textColor="#3e2723" />
 
 
-        <Button
-            android:id="@+id/ex3"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/exercise_1"
-            android:text="Exercise 3"
-            android:textColor="#3e2723" />
+    <Button
+        android:id="@+id/ex3"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/exercise_1"
+        android:layout_toRightOf="@id/ex2"
+        android:text="Exercise 3"
+        android:textColor="#3e2723" />
 
 
-        <Button
-            android:id="@+id/ex4"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/exercise_1"
-            android:text="Exercise 4"
-            android:textColor="#3e2723" />
+    <Button
+        android:id="@+id/ex4"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@id/ex3"
+        android:background="@drawable/exercise_1"
+        android:text="Exercise 4"
+        android:textColor="#3e2723" />
 
-    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/messageExercise"
+        android:layout_width="343dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Try one of these exercises."
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:text="Your first and easiest exercise. Try it now!"
         android:textColor="@color/black"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textStyle="italic" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:background="@drawable/baseline_arrow_upward_24"
+        android:layout_centerVertical="true"
+        android:layout_alignTop="@id/ex1"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp" />
 
 
 </RelativeLayout>

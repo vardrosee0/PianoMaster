@@ -1,6 +1,5 @@
 package com.example.pianomaster;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -8,39 +7,30 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
 
-public class Exercise1Activity extends AppCompatActivity implements View.OnClickListener{
+public class Exercise2Activity extends AppCompatActivity implements View.OnClickListener{
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19;
     TextView notes, checking;
-    int n = 8;
+    int n = 18;
     Button b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, b34, b35, b36;
     int i = 0, a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
     int d4, d4sh, d5, d5sh, e3, e4, e5, f3, f3sh, f4, f4sh, f5, f5sh, g3, g3sh, g4, g4sh, g5, g5sh;
     private SoundPool soundPool;
-    public static boolean open2;
     Button ex1, check_button;
-    String[] sequence1 = {"c4", "d4", "e4", "f4", "g4", "a4", "b4_", "c5"};
+    String[] sequence1 = {"g4", "d4", "g4", "d4", "g4", "d4", "g4", "b4_", "d5", "c5", "a4", "c5",
+            "a4", "c5", "a4", "f4sh", "a4", "d4"};
 
-    String[] sequence2 = new String[n];
+    String[] sequence2 = new String[18];
 
     // piano notes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise1);
+        setContentView(R.layout.activity_exercise2);
 
         notes = findViewById(R.id.n_notes);
         notes.setText("Number of notes left: " + n);
@@ -164,21 +154,31 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
 
 
 
-        playSound(c4, 1000);
-        playSound(d4, 1500);
-        playSound(e4, 2000);
-        playSound(f4, 2500);
-        playSound(g4, 3000);
-        playSound(a4, 3500);
-        playSound(b4_, 4000);
-        playSound(c5, 4500);
+        playSound(g4, 1000);
+        playSound(d4, 1700);
+        playSound(g4, 1900);
+        playSound(d4, 2600);
+        playSound(g4, 2800);
+        playSound(d4, 3000);
+        playSound(g4, 3200);
+        playSound(b4_, 3400);
+        playSound(d5, 3600);
+
+        playSound(c5, 4600);
+        playSound(a4, 5300);
+        playSound(c5, 5500);
+        playSound(a4, 6200);
+        playSound(c5, 6400);
+        playSound(a4, 6600);
+        playSound(f4sh, 6800);
+        playSound(a4, 7000);
+        playSound(d4, 7200);
 
         check_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (Arrays.equals(sequence1, sequence2)) {
                     checking.setText("Well done! You got it right.");
-                    open2 = true;
                 } else {
                     checking.setText("You failed... Exercise more and you'll get it right!");
                 }
@@ -206,7 +206,7 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
     }
 
     public void addToArray(String note) {
-        if (i < 8) {
+        if (i < 18) {
 
             sequence2[i] = note;
             i = i + 1;
@@ -248,7 +248,6 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k8:
-                addToArray("c4");
                 soundPool.play(c4, 1, 1, 0, 0, 1);
                 break;
 
@@ -258,12 +257,10 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k10:
-                addToArray("e4");
                 soundPool.play(e4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k11:
-                addToArray("f4");
                 soundPool.play(f4, 1, 1, 0, 0, 1);
                 break;
 
@@ -288,6 +285,7 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k16:
+                addToArray("d5");
                 soundPool.play(d5, 1, 1, 0, 0, 1);
                 break;
 
