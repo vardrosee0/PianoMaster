@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 public class Exercise1Activity extends AppCompatActivity implements View.OnClickListener{
@@ -27,14 +29,16 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
     TextView notes, checking;
     int n = 8;
     Button b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, b34, b35, b36;
-    int i = 0, a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
+    int i1 = 0, i2 = 0, i3 = 0, i4 = 0, i5 = 0, i6 = 0, i7 = 0, i8 = 0;
+    int a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
     int d4, d4sh, d5, d5sh, e3, e4, e5, f3, f3sh, f4, f4sh, f5, f5sh, g3, g3sh, g4, g4sh, g5, g5sh;
     private SoundPool soundPool;
     public static boolean open2;
+    ProgressBar progressBar;
     Button ex1, check_button;
     String[] sequence1 = {"c4", "d4", "e4", "f4", "g4", "a4", "b4_", "c5"};
 
-    String[] sequence2 = new String[n];
+    String[] sequence2;
 
     // piano notes
     @Override
@@ -42,11 +46,14 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise1);
 
+
         notes = findViewById(R.id.n_notes);
         notes.setText("Number of notes left: " + n);
+        sequence2 = new String[8];
 
         checking = findViewById(R.id.congrats);
         check_button = findViewById(R.id.check);
+        progressBar = findViewById(R.id.progressBar);
 
         b1 = findViewById(R.id.k1);
         b2 = findViewById(R.id.b1);
@@ -175,7 +182,8 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
 
         check_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 if (Arrays.equals(sequence1, sequence2)) {
                     checking.setText("Well done! You got it right.");
                     open2 = true;
@@ -184,7 +192,6 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 }
             }
         });
-
     }
 
     public void goToAnActivity(View view) {
@@ -202,17 +209,22 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
 
             }
         }, millis);
-
     }
 
-    public void addToArray(String note) {
-        if (i < 8) {
-
-            sequence2[i] = note;
-            i = i + 1;
-            n = n - 1;
-            notes.setText("Number of notes left: " + n);
+    public void playSound(Button next_key, Button current_key, int i) {
+        if (i == 0){
+            next_key.setBackgroundResource(R.drawable.right_selector);
+            progressBar.incrementProgressBy(12);
+        } else {
+            current_key.setBackgroundResource(R.drawable.wrong_selector);
         }
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                current_key.setBackgroundResource(R.drawable.wrong_selector);
+            }
+        }, 500);
     }
 
 
@@ -221,190 +233,165 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.k1:
-                b1.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(c3, 1, 1, 0, 0, 1);
                 break;
             case R.id.k2:
-                b3.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(d3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k3:
-                b5.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(e3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k4:
-                b6.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(f3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k5:
-                b8.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(g3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k6:
-                b10.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(a3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k7:
-                b12.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(b3_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k8:
-                addToArray("c4");
-                b13.setBackgroundResource(R.drawable.right_selector);
                 soundPool.play(c4, 1, 1, 0, 0, 1);
+                playSound(b15, b13, i1);
+                i1 += 1;
                 break;
 
             case R.id.k9:
-                addToArray("d4");
-                b15.setBackgroundResource(R.drawable.right_selector);
                 soundPool.play(d4, 1, 1, 0, 0, 1);
+                playSound(b17, b15, i2);
+                i2 += 1;
                 break;
 
             case R.id.k10:
-                addToArray("e4");
-                b17.setBackgroundResource(R.drawable.right_selector);
+                playSound(b18, b17, i3);
+                i3 += 1;
                 soundPool.play(e4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k11:
-                addToArray("f4");
-                b18.setBackgroundResource(R.drawable.right_selector);
+                playSound(b20, b18, i4);
+                i4 += 1;
                 soundPool.play(f4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k12:
-                b20.setBackgroundResource(R.drawable.right_selector);
-                addToArray("g4");
+                playSound(b22, b20, i5);
+                i5 += 1;
                 soundPool.play(g4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k13:
-                b22.setBackgroundResource(R.drawable.right_selector);
-                addToArray("a4");
+                playSound(b24, b22, i6);
+                i6 += 1;
                 soundPool.play(a4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k14:
-                b24.setBackgroundResource(R.drawable.right_selector);
-                addToArray("b4_");
+                playSound(b25, b24, i7);
+                i7 += 1;
                 soundPool.play(b4_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k15:
-                addToArray("c5");
-                b25.setBackgroundResource(R.drawable.right_selector);
+                playSound(b27, b25, i8);
+                i8 += 1;
+                b27.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(c5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k16:
-                b27.setBackgroundResource(R.drawable.wrong_selector);
+
                 soundPool.play(d5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k17:
-                b29.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(e5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k18:
-                b30.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(f5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k19:
-                b32.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(g5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k20:
-                b34.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(a5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k21:
-                b35.setBackgroundResource(R.drawable.wrong_selector);
                 soundPool.play(b5_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b1:
-                b2.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(c3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b2:
-                b4.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(d3sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b3:
-                b7.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(f3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b4:
-                b9.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(g3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b5:
-                b11.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(a3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b6:
-                b14.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(c4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b7:
-                b16.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(d4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b8:
-                b19.setBackgroundResource(R.drawable.wrong_black_selector);
-                addToArray("f4sh");
                 soundPool.play(f4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b9:
-                b21.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(g4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b10:
-                b23.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(a4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b11:
-                b26.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(c5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b12:
-                b28.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(d5sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b13:
-                b31.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(f5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b14:
-                b33.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(g5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b15:
-                b36.setBackgroundResource(R.drawable.wrong_black_selector);
                 soundPool.play(a5sh, 1, 1, 0, 0, 1);
                 break;
+
+
         }
 
     }
