@@ -6,25 +6,28 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.TreeMap;
 
 public class Exercise2Activity extends AppCompatActivity implements View.OnClickListener{
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19;
-    TextView notes, checking;
-    int n = 18;
+    TextView congrats, points, inform;
+    int pos = 1;
+    ProgressBar progressBar;
+    TreeMap<Integer, String> notes = new TreeMap<>();
+
     Button b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, b34, b35, b36;
-    int i = 0, a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
+    int a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
     int d4, d4sh, d5, d5sh, e3, e4, e5, f3, f3sh, f4, f4sh, f5, f5sh, g3, g3sh, g4, g4sh, g5, g5sh;
     private SoundPool soundPool;
-    Button ex1, check_button;
-    String[] sequence1 = {"g4", "d4", "g4", "d4", "g4", "d4", "g4", "b4_", "d5", "c5", "a4", "c5",
-            "a4", "c5", "a4", "f4sh", "a4", "d4"};
+    public static boolean open3;
 
-    String[] sequence2 = new String[18];
 
     // piano notes
     @Override
@@ -32,11 +35,31 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise2);
 
-        notes = findViewById(R.id.n_notes);
-        notes.setText("Number of notes left: " + n);
+        congrats = findViewById(R.id.congrats);
+        points = findViewById(R.id.points);
+        inform = findViewById(R.id.textView3);
 
-        checking = findViewById(R.id.congrats);
-        check_button = findViewById(R.id.check);
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setMax(280);
+
+        points.setText(String.valueOf(Exercise1Activity.points_amount));
+
+        notes.put(1, "c4");
+        notes.put(2, "c4");
+        notes.put(3, "g4");
+        notes.put(4, "g4");
+        notes.put(5, "a4");
+        notes.put(6, "a4");
+        notes.put(7, "g4");
+
+        notes.put(8, "f4");
+        notes.put(9, "f4");
+        notes.put(10, "e4");
+        notes.put(11, "e4");
+        notes.put(12, "d4");
+        notes.put(13, "d4");
+        notes.put(14, "c4");
+
 
         b1 = findViewById(R.id.k1);
         b2 = findViewById(R.id.b1);
@@ -153,43 +176,54 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
         b5_ = soundPool.load(this, R.raw.b5, 1);
 
 
+        playSound(c4, 1000);
+        playSound(c4, 1400);
+        playSound(g4, 1800);
+        playSound(g4, 2200);
+        playSound(a4, 2600);
+        playSound(a4, 3000);
+        playSound(g4, 3400);
 
-        playSound(g4, 1000);
-        playSound(d4, 1700);
-        playSound(g4, 1900);
-        playSound(d4, 2600);
-        playSound(g4, 2800);
-        playSound(d4, 3000);
-        playSound(g4, 3200);
-        playSound(b4_, 3400);
-        playSound(d5, 3600);
-
-        playSound(c5, 4600);
-        playSound(a4, 5300);
-        playSound(c5, 5500);
-        playSound(a4, 6200);
-        playSound(c5, 6400);
-        playSound(a4, 6600);
-        playSound(f4sh, 6800);
-        playSound(a4, 7000);
-        playSound(d4, 7200);
-
-        check_button.setOnClickListener(new View.OnClickListener() {
+        playSound(f4, 4100);
+        playSound(f4, 4500);
+        playSound(e4, 4900);
+        playSound(e4, 5300);
+        playSound(d4, 5700);
+        playSound(d4, 6100);
+        playSound(c4, 6500);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                if (Arrays.equals(sequence1, sequence2)) {
-                    checking.setText("Well done! You got it right.");
-                } else {
-                    checking.setText("You failed... Exercise more and you'll get it right!");
-                }
+            public void run() {
+                progressBar.setVisibility(View.VISIBLE);
+                inform.setText("Play!");
             }
-        });
+        }, 6800);
 
     }
 
     public void goToAnActivity(View view) {
+        soundPool.release();
         Intent intent = new Intent(this, ExercisesActivity.class);
         startActivity(intent);
+    }
+
+    public void playSound(Button next_key, Button current_key, int pos1, String note) {
+        if (Objects.equals(notes.get(pos1), note)){
+            next_key.setBackgroundResource(R.drawable.right_selector);
+            pos++;
+            Exercise1Activity.points_amount += 10;
+            points.setText(String.valueOf(Exercise1Activity.points_amount));
+            progressBar.incrementProgressBy(20);
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    current_key.setBackgroundResource(R.drawable.wrong_selector);
+                }
+            }, 100);
+        }
+
     }
 
 
@@ -203,16 +237,6 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
             }
         }, millis);
 
-    }
-
-    public void addToArray(String note) {
-        if (i < 18) {
-
-            sequence2[i] = note;
-            i = i + 1;
-            n = n - 1;
-            notes.setText("Number of notes left: " + n);
-        }
     }
 
 
@@ -248,44 +272,78 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k8:
+                switch (pos) {
+                    case 1: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20); break;
+                    case 2: playSound(b20, b13, pos, "c4"); break;
+                    case 14:
+                        playSound(b12, b13, pos, "c4");
+                        if (progressBar.getMax() == progressBar.getProgress()) {
+                            inform.setVisibility(View.INVISIBLE);
+                            congrats.setText("Incredible! New level is unlocked.");
+                            open3 = true;
+                        }
+                        b12.setBackgroundResource(R.drawable.wrong_selector);
+                        break;
+                }
+
                 soundPool.play(c4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k9:
-                addToArray("d4");
+                switch (pos) {
+                    case 12: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
+                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 13: playSound(b13, b15, pos, "d4"); break;
+                }
                 soundPool.play(d4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k10:
+                switch (pos) {
+                    case 10: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
+                        points.setText(String.valueOf(Exercise1Activity.points_amount));break;
+                    case 11: playSound(b15, b17, pos, "e4"); break;
+                }
                 soundPool.play(e4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k11:
+                switch (pos) {
+                    case 8: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
+                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 9: playSound(b17, b18, pos, "f4"); break;
+                }
                 soundPool.play(f4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k12:
-                addToArray("g4");
+                switch (pos) {
+                    case 3: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
+                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 4: playSound(b22, b20, pos, "g4"); break;
+                    case 7: playSound(b18, b20, pos, "g4");break;
+                }
                 soundPool.play(g4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k13:
-                addToArray("a4");
+                switch (pos) {
+                    case 5: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
+                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 6: playSound(b20, b22, pos, "a4"); break;
+                }
                 soundPool.play(a4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k14:
-                addToArray("b4_");
                 soundPool.play(b4_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k15:
-                addToArray("c5");
                 soundPool.play(c5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k16:
-                addToArray("d5");
                 soundPool.play(d5, 1, 1, 0, 0, 1);
                 break;
 
@@ -337,7 +395,6 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.b8:
-                addToArray("f4sh");
                 soundPool.play(f4sh, 1, 1, 0, 0, 1);
                 break;
 

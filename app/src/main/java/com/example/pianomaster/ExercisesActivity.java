@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ExercisesActivity extends AppCompatActivity {
-    Button ex2, ex1;
+    ImageView ex2, ex1, ex3, ex4, lock2, lock3, lock4;
     TextView message;
     ImageView arrow;
 
@@ -23,26 +23,25 @@ public class ExercisesActivity extends AppCompatActivity {
 
         ex2 = findViewById(R.id.ex2);
         ex1 = findViewById(R.id.ex1);
-        message = findViewById(R.id.messageExercise);
-        arrow = findViewById(R.id.arrow);
-        ex2.setClickable(false);
+        ex3 = findViewById(R.id.ex3);
+        ex4 = findViewById(R.id.ex4);
 
+        lock2 = findViewById(R.id.lock2);
+        lock3 = findViewById(R.id.lock3);
+        lock4 = findViewById(R.id.lock4);
 
 
         if (Exercise1Activity.open2) {
             ex2.setClickable(true);
-            ViewGroup.MarginLayoutParams marginParams1 = (ViewGroup.MarginLayoutParams) arrow.getLayoutParams();
-            ViewGroup.MarginLayoutParams marginParams2 = (ViewGroup.MarginLayoutParams) message.getLayoutParams();
-            marginParams1.setMargins(460,
-                    marginParams1.topMargin,
-                    marginParams1.rightMargin,
-                    marginParams1.bottomMargin);
-            marginParams2.setMargins(300,
-                    marginParams2.topMargin,
-                    marginParams2.rightMargin,
-                    marginParams2.bottomMargin);
-            message.setText("Stepping into a harder exercise. Be more careful!");
+            lock2.setBackgroundResource(R.drawable.baseline_lock_open_24);
         }
+
+        if (Exercise2Activity.open3) {
+            ex3.setClickable(true);
+            lock3.setBackgroundResource(R.drawable.baseline_lock_open_24);
+
+        }
+
 
     }
 
@@ -53,6 +52,11 @@ public class ExercisesActivity extends AppCompatActivity {
 
     public void goToAnExercise2(View view) {
         Intent intent = new Intent(this, Exercise2Activity.class);
+        startActivity(intent);
+    }
+
+    public void goToAnExercise3(View view) {
+        Intent intent = new Intent(this, Exercise3Activity.class);
         startActivity(intent);
     }
 }

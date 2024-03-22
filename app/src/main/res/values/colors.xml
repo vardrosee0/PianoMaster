@@ -8,5 +8,9 @@
     <color name="pinky">#FF9EDF</color>
     <color name="green">#25E818</color>
     <color name="red">#ED0A0A</color>
+    <color name="main_color">#F7E4F1</color>
+    <color name="reddish">#EC7F7F</color>
+
+
 
 </resources>

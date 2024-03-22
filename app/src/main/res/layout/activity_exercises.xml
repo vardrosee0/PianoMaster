@@ -5,78 +5,132 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/piano_background3"
+    android:background="@color/pink"
+    android:padding="30dp"
     tools:context=".ExercisesActivity"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Button
-        android:id="@+id/ex1"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/exercise_1"
-        android:onClick="goToAnExercise1"
-        android:text="Exercise 1"
-        android:textColor="#3e2723" />
+    <RelativeLayout
+        android:id="@+id/box"
+        android:layout_width="250dp"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/ex2"
-        android:layout_toRightOf="@id/ex1"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/exercise_1"
-        android:onClick="goToAnExercise2"
-        android:text="Exercise 2"
-        android:textColor="#3e2723" />
+    </RelativeLayout>
 
-
-    <Button
-        android:id="@+id/ex3"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/exercise_1"
-        android:layout_toRightOf="@id/ex2"
-        android:text="Exercise 3"
-        android:textColor="#3e2723" />
-
-
-    <Button
-        android:id="@+id/ex4"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_toEndOf="@id/ex3"
-        android:background="@drawable/exercise_1"
-        android:text="Exercise 4"
-        android:textColor="#3e2723" />
-
-
-    <TextView
-        android:id="@+id/messageExercise"
-        android:layout_width="343dp"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="20dp"
-        android:text="Your first and easiest exercise. Try it now!"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="italic" />
 
     <ImageView
-        android:id="@+id/arrow"
-        android:layout_width="80dp"
-        android:layout_height="90dp"
-        android:background="@drawable/baseline_arrow_upward_24"
-        android:layout_centerVertical="true"
+        android:id="@+id/ex1"
+        android:onClick="goToAnExercise1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/play_button"/>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@id/ex1"
+        android:layout_alignBottom="@id/ex1"
+        android:src="@drawable/baseline_lock_open_24"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@id/ex1"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:text="    Beginner"/>
+
+    <ImageView
+        android:id="@+id/ex2"
         android:layout_alignTop="@id/ex1"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="50dp" />
+        android:onClick="goToAnExercise2"
+        android:layout_marginTop="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/play_button"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@id/ex2"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="90dp"
+        android:textSize="25sp"
+        android:text="    Intermediate"/>
+
+    <ImageView
+        android:id="@+id/ex3"
+        android:layout_alignTop="@id/ex2"
+        android:layout_marginTop="80dp"
+        android:onClick="goToAnExercise3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/play_button"/>
+
+    <ImageView
+        android:id="@+id/lock2"
+        android:clickable="false"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@id/ex2"
+        android:layout_alignBottom="@id/ex2"
+        android:background="@drawable/baseline_lock_24"/>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@id/ex3"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="170dp"
+        android:textSize="25sp"
+        android:text="    Advanced"/>
+
+    <ImageView
+        android:clickable="false"
+        android:id="@+id/ex4"
+        android:layout_alignTop="@id/ex3"
+        android:layout_marginTop="80dp"
+        android:onClick="goToAnExercise4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/play_button"/>
+
+    <ImageView
+        android:id="@+id/lock3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@id/ex3"
+        android:layout_alignBottom="@id/ex3"
+        android:background="@drawable/baseline_lock_24"/>
+
+    <TextView
+        android:clickable="false"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@id/ex4"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="250dp"
+        android:textSize="25sp"
+        android:text="    Professional"/>
+
+    <ImageView
+        android:id="@+id/lock4"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@id/ex4"
+        android:layout_alignBottom="@id/ex4"
+        android:background="@drawable/baseline_lock_24"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/music"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/box"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="-10dp"
+        android:src="@drawable/dancing_notes_cute" />
 
 
 </RelativeLayout>

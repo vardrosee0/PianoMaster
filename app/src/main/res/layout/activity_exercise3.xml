@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     android:padding="16dp"
     android:gravity="top|center"
-    tools:context=".Exercise2Activity">
+    tools:context=".Exercise3Activity">
 
 
     <HorizontalScrollView
@@ -70,7 +70,7 @@
             <Button
                 android:id="@+id/k8"
                 style="@style/white_key"
-                android:background="@drawable/right_selector"
+                android:background="@drawable/wrong_selector"
                 android:layout_marginStart="2dp"
                 android:layout_toEndOf="@id/k7" />
 
@@ -98,7 +98,7 @@
             <Button
                 android:id="@+id/k12"
                 style="@style/white_key"
-                android:background="@drawable/wrong_selector"
+                android:background="@drawable/right_selector"
                 android:layout_marginStart="2dp"
                 android:layout_toEndOf="@id/k11" />
 
