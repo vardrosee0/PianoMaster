@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -30,17 +32,16 @@ public class ExercisesActivity extends AppCompatActivity {
         lock3 = findViewById(R.id.lock3);
         lock4 = findViewById(R.id.lock4);
 
-
         if (Exercise1Activity.open2) {
-            ex2.setClickable(true);
             lock2.setBackgroundResource(R.drawable.baseline_lock_open_24);
         }
 
         if (Exercise2Activity.open3) {
-            ex3.setClickable(true);
             lock3.setBackgroundResource(R.drawable.baseline_lock_open_24);
-
         }
+
+
+
 
 
     }
@@ -51,12 +52,22 @@ public class ExercisesActivity extends AppCompatActivity {
     }
 
     public void goToAnExercise2(View view) {
-        Intent intent = new Intent(this, Exercise2Activity.class);
-        startActivity(intent);
+        if (Exercise1Activity.open2) {
+            ex2.setClickable(true);
+            lock2.setBackgroundResource(R.drawable.baseline_lock_open_24);
+            Intent intent = new Intent(this, Exercise2Activity.class);
+            startActivity(intent);
+        }
+
     }
 
     public void goToAnExercise3(View view) {
-        Intent intent = new Intent(this, Exercise3Activity.class);
-        startActivity(intent);
+        if (Exercise2Activity.open3) {
+            ex3.setClickable(true);
+            lock3.setBackgroundResource(R.drawable.baseline_lock_open_24);
+            Intent intent = new Intent(this, Exercise3Activity.class);
+            startActivity(intent);
+        }
+
     }
 }

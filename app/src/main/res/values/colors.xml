@@ -11,6 +11,14 @@
     <color name="main_color">#F7E4F1</color>
     <color name="reddish">#EC7F7F</color>
 
+    //onboarding colors
+    <color name="background">#F0F4F3</color>
+    <color name="buttontext">#50C2C9</color>
+
+    //indicator color
+    <color name="inactive">#C4C4C4</color>
+    <color name="active">#50C2C9</color>
+
 
 
 </resources>

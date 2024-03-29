@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 import java.util.TreeMap;
 
-public class Exercise3Activity extends AppCompatActivity implements View.OnClickListener{
+public class Exercise4Activity extends AppCompatActivity implements View.OnClickListener{
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19;
     TextView congrats, points, inform;
     int pos = 1;
@@ -261,41 +261,33 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.k1:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c3, 1, 1, 0, 0, 1);
                 break;
             case R.id.k2:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k3:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(e3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k4:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k5:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k6:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k7:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(b3_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k8:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c4, 1, 1, 0, 0, 1);
                 break;
 
@@ -318,12 +310,10 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k10:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(e4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k11:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f4, 1, 1, 0, 0, 1);
                 break;
 
@@ -370,61 +360,49 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k17:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(e5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k18:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k19:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k20:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k21:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(b5_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b1:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b2:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d3sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b3:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b4:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b5:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b6:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b7:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d4sh, 1, 1, 0, 0, 1);
                 break;
 
@@ -434,36 +412,29 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.b9:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b10:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b11:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b12:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d5sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b13:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b14:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b15:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a5sh, 1, 1, 0, 0, 1);
                 break;
         }

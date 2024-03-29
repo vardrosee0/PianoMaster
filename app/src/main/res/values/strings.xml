@@ -17,16 +17,16 @@
     <string name="previous">Previous</string>
 
 
-    <string name="first_slide_title">Get a perfect pitch on the piano as a beginner, intermediate or advanced</string>
-    <string name="second_slide_title">Challenging and mind-provoking exercises</string>
-    <string name="third_slide_title">Keep track of your progress</string>
-    <string name="fourth_slide_title">Get your "Perfect Pitch" badge at the end</string>
+    <string name="heading_one">Welcome to our app!</string>
+    <string name="heading_two">You will gain new valuable skills!</string>
+    <string name="heading_three">Keep track of your progress!</string>
+    <string name="heading_fourth">Have fun and share your experience with friends!</string>
 
 
-    <string name="first_slide_desc">If you are a beginner, start with learning and revising notes and try fundamentary exercises</string>
-    <string name="second_slide_desc">To play the melody on the piano, you need a good concentration and careful listening skills</string>
-    <string name="third_slide_desc">You have an opportunity to move from beginner to advanced user</string>
-    <string name="fourth_slide_desc">An award for the enthusiastic and hard-working users</string>
+    <string name="desc_one">Our app will guide you on your journey of a musician through challenging exercises.</string>
+    <string name="desc_two">This list can be endless: listening, focus and concentration, piano notes recognition(musical pitch), singing skills.</string>
+    <string name="desc_three">If you start as a beginner, you have the opportunity to improve and reach to the advanced level.</string>
+    <string name="desc_fourth">You can make any event more exciting and colorful with your musical skills.</string>
 
     <string name="skip_btn">Get a perfect pitch on the piano as a beginner, intermediate or advanced</string>
     <string name="next_btn">Challenging and mind-provoking exercises</string>

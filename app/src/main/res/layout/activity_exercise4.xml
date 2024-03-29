@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     android:padding="16dp"
     android:gravity="top|center"
-    tools:context=".Exercise3Activity">
+    tools:context=".Exercise4Activity">
 
 
     <HorizontalScrollView

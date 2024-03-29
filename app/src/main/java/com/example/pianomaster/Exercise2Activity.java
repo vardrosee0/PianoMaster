@@ -245,29 +245,36 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.k1:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c3, 1, 1, 0, 0, 1);
                 break;
             case R.id.k2:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k3:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(e3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k4:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k5:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k6:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k7:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(b3_, 1, 1, 0, 0, 1);
                 break;
 
@@ -336,92 +343,116 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k14:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(b4_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k15:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k16:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k17:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(e5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k18:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k19:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k20:
+                Exercise1Activity.points_amount -= 10;
+
                 soundPool.play(a5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k21:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(b5_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b1:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b2:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d3sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b3:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b4:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b5:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b6:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b7:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b8:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b9:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b10:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b11:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b12:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(d5sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b13:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(f5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b14:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(g5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b15:
+                Exercise1Activity.points_amount -= 10;
                 soundPool.play(a5sh, 1, 1, 0, 0, 1);
                 break;
         }

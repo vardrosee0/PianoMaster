@@ -148,6 +148,7 @@
             <Button
                 android:id="@+id/k19"
                 style="@style/white_key"
+                android:background="@drawable/wrong_selector"
                 android:layout_marginStart="2dp"
                 android:layout_toEndOf="@id/k18" />
 

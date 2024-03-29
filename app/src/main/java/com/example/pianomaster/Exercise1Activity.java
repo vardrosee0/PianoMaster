@@ -254,28 +254,35 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
         switch (view.getId()) {
             case R.id.k1:
                 soundPool.play(c3, 1, 1, 0, 0, 1);
+                points_amount -= 10;
                 break;
             case R.id.k2:
+                points_amount -= 10;
                 soundPool.play(d3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k3:
+                points_amount -= 10;
                 soundPool.play(e3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k4:
+                points_amount -= 10;
                 soundPool.play(f3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k5:
+                points_amount -= 10;
                 soundPool.play(g3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k6:
+                points_amount -= 10;
                 soundPool.play(a3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k7:
+                points_amount -= 10;
                 soundPool.play(b3_, 1, 1, 0, 0, 1);
                 break;
 
@@ -326,74 +333,91 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.k16:
-
+                points_amount -= 10;
                 soundPool.play(d5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k17:
+                points_amount -= 10;
                 soundPool.play(e5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k18:
+                points_amount -= 10;
                 soundPool.play(f5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k19:
+                points_amount -= 10;
                 soundPool.play(g5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k20:
+                points_amount -= 10;
                 soundPool.play(a5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k21:
+                points_amount -= 10;
                 soundPool.play(b5_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b1:
+                points_amount -= 10;
                 soundPool.play(c3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b2:
+                points_amount -= 10;
                 soundPool.play(d3sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b3:
+                points_amount -= 10;
                 soundPool.play(f3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b4:
+                points_amount -= 10;
                 soundPool.play(g3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b5:
+                points_amount -= 10;
                 soundPool.play(a3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b6:
+                points_amount -= 10;
                 soundPool.play(c4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b7:
+                points_amount -= 10;
                 soundPool.play(d4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b8:
+                points_amount -= 10;
                 soundPool.play(f4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b9:
+                points_amount -= 10;
                 soundPool.play(g4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b10:
+                points_amount -= 10;
                 soundPool.play(a4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b11:
+                points_amount -= 10;
                 soundPool.play(c5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b12:
+                points_amount -= 10;
                 soundPool.play(d5sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b13:
@@ -401,10 +425,12 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.b14:
+                points_amount -= 10;
                 soundPool.play(g5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b15:
+                points_amount -= 10;
                 soundPool.play(a5sh, 1, 1, 0, 0, 1);
                 break;
 

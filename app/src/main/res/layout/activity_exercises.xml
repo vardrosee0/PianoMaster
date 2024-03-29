@@ -38,11 +38,13 @@
         android:layout_alignStart="@id/ex1"
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_bold"
         android:textSize="25dp"
         android:text="    Beginner"/>
 
     <ImageView
         android:id="@+id/ex2"
+        android:clickable="false"
         android:layout_alignTop="@id/ex1"
         android:onClick="goToAnExercise2"
         android:layout_marginTop="80dp"
@@ -56,11 +58,13 @@
         android:layout_alignStart="@id/ex2"
         android:layout_marginStart="60dp"
         android:layout_marginTop="90dp"
+        android:fontFamily="@font/poppins_bold"
         android:textSize="25sp"
         android:text="    Intermediate"/>
 
     <ImageView
         android:id="@+id/ex3"
+        android:clickable="false"
         android:layout_alignTop="@id/ex2"
         android:layout_marginTop="80dp"
         android:onClick="goToAnExercise3"
@@ -84,6 +88,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="170dp"
         android:textSize="25sp"
+        android:fontFamily="@font/poppins_bold"
         android:text="    Advanced"/>
 
     <ImageView
@@ -112,10 +117,12 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="250dp"
         android:textSize="25sp"
+        android:fontFamily="@font/poppins_bold"
         android:text="    Professional"/>
 
     <ImageView
         android:id="@+id/lock4"
+        android:clickable="false"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignEnd="@id/ex4"
