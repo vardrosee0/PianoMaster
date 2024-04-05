@@ -341,7 +341,7 @@
         android:id="@+id/imageView2"
         android:layout_width="81dp"
         android:layout_height="58dp"
-        app:srcCompat="@drawable/back_button"
+        app:srcCompat="@drawable/back_b"
         android:onClick="goToAnActivity"/>
 
 

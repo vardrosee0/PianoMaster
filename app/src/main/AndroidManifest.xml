@@ -16,6 +16,9 @@
         android:theme="@style/Theme.PianoMaster"
         tools:targetApi="31">
         <activity
+            android:name=".BeginnerActivity"
+            android:exported="false" />
+        <activity
             android:name=".QueryActivity"
             android:exported="false" />
         <activity
@@ -36,7 +39,7 @@
             android:name=".ExercisesActivity"
             android:exported="false"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.PianoMaster"></activity>
+            android:theme="@style/Theme.PianoMaster" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

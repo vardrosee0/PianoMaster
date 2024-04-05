@@ -21,7 +21,7 @@ public class ViewPagerAdapter extends PagerAdapter {
             R.drawable.mickeymouse,
             R.drawable.playingpiano,
             R.drawable.cute_cat,
-            R.drawable.boy
+            R.drawable.cute_cat2
 
     };
 

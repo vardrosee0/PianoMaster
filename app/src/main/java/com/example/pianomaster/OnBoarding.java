@@ -50,7 +50,7 @@ public class OnBoarding extends AppCompatActivity {
                     mSLideViewPager.setCurrentItem(getitem(1),true);
                 else {
 
-                    Intent i = new Intent(OnBoarding.this, ExercisesActivity.class);
+                    Intent i = new Intent(OnBoarding.this, QueryActivity.class);
                     startActivity(i);
                     finish();
 

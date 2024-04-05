@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BeginnerActivity"
+    android:background="@color/pink"
+    android:padding="@dimen/layer_padding">
+
+    <TextView
+        android:id="@+id/beginner_text"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textColor="@color/black"
+        android:text="Beginner"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="50dp"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:id="@+id/learn_notes"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:drawableStart="@drawable/notes_icon"
+        android:layout_alignTop="@id/beginner_text"
+        android:text="Learn notes"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/hot_pink"
+        android:background="@drawable/exercise_button_design"/>
+
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="210dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:id="@+id/beg_ex1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="226dp"
+        android:background="@drawable/exercise_button_design"
+        android:drawableStart="@drawable/baseline_music_note_24"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        android:text="C major"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:src="@drawable/play"
+        android:layout_marginBottom="25dp"
+        android:layout_alignEnd="@id/beg_ex1"
+        android:layout_alignBottom="@id/beg_ex1"
+        />
+
+    <Button
+        android:id="@+id/beg_ex2"
+        android:onClick="goToAnExercise2"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Twinkle Twinkle Little Star"
+        android:drawableStart="@drawable/baseline_music_note_24"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/exercise_button_design"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:src="@drawable/play"
+        android:layout_marginBottom="25dp"
+        android:layout_alignEnd="@id/beg_ex2"
+        android:layout_alignBottom="@id/beg_ex2"
+        />
+
+
+
+</RelativeLayout>

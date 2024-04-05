@@ -5,15 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink"
+    android:padding="@dimen/layer_padding"
     tools:context=".QueryActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Main Page"
+        android:text="What's your level?"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"
-        android:textSize="50dp"
-        android:padding="@dimen/layer_padding"/>
+        android:textSize="30dp"
+        android:layout_marginTop="150dp"/>
+
+    <TextView
+        android:id="@+id/text22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose your current level. PianoMaster will suggest the best lessons for you."
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_marginTop="200dp"/>
+
+    <Button
+        android:id="@+id/button_beginner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/text22"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="I'm just starting"
+        android:background="@drawable/button_design"/>
+
+    <Button
+        android:id="@+id/button_inter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/button_beginner"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="I know the basics"
+        android:background="@drawable/button_design2"/>
+
+    <Button
+        android:id="@+id/button_advanced"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/button_inter"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="I know a lot"
+        android:background="@drawable/button_design3"/>
+
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/next_b"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"
+        android:onClick="goToTheMainPage"/>
 
 </RelativeLayout>

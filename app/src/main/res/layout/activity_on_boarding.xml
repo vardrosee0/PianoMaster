@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/layer_padding"
     android:background="@color/pink"
     tools:context=".OnBoarding">
 
@@ -11,7 +12,7 @@
         android:id="@+id/slideViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="100dp"
+        android:layout_marginVertical="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,20 +21,17 @@
 
     <ImageView
         android:id="@+id/backbtn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#00000000"
-        android:text="Back"
-        android:src="@drawable/back_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back_b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/nextbtn"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#00000000"
-        android:src="@drawable/next_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/next_b"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
