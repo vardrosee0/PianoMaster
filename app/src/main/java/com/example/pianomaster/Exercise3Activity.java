@@ -213,7 +213,7 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
 
     public void goToAnActivity(View view) {
         soundPool.release();
-        Intent intent = new Intent(this, ExercisesActivity.class);
+        Intent intent = new Intent(this, IntermediateActivity.class);
         startActivity(intent);
     }
 

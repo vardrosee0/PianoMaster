@@ -19,6 +19,12 @@
             android:name=".BeginnerActivity"
             android:exported="false" />
         <activity
+            android:name=".IntermediateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdvancedActivity"
+            android:exported="false" />
+        <activity
             android:name=".QueryActivity"
             android:exported="false" />
         <activity
@@ -66,6 +72,10 @@
             android:name=".Exercise4Activity"
             android:exported="false"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".Beg3Activity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

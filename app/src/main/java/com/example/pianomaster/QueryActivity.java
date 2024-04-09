@@ -59,6 +59,16 @@ public class QueryActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        else if (bt2) {
+            Intent intent = new Intent(this, IntermediateActivity.class);
+            startActivity(intent);
+        }
+
+        else if (bt3) {
+            Intent intent = new Intent(this, AdvancedActivity.class);
+            startActivity(intent);
+        }
+
 
     }
 }

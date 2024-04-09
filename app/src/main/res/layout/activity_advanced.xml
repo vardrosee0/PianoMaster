@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BeginnerActivity"
+    tools:context=".AdvancedActivity"
     android:background="@color/pink"
     android:padding="@dimen/layer_padding">
 
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:textColor="@color/black"
-        android:text="Beginner"
+        android:text="Advanced"
         android:fontFamily="@font/poppins_bold"
         android:textSize="50dp"/>
 
@@ -24,36 +24,12 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
 
-    <Button
-        android:id="@+id/learn_notes"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:drawableStart="@drawable/notes_icon"
-        android:layout_alignTop="@id/beginner_text"
-        android:text="Learn notes"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="100dp"
-        android:backgroundTint="@color/hot_pink"
-        android:background="@drawable/exercise_button_design"/>
-
-
-    <View
-        android:id="@+id/divider1"
-        android:layout_width="match_parent"
-        android:layout_marginTop="210dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
 
     <Button
         android:id="@+id/beg_ex1"
-        android:onClick="goToAnExercise1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="226dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/exercise_button_design"
         android:drawableStart="@drawable/baseline_music_note_24"
         android:fontFamily="@font/poppins_medium"
@@ -64,11 +40,10 @@
         android:textSize="18dp" />
 
     <ImageView
-        android:id="@+id/play_btn"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:src="@drawable/play"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="25dp"
         android:layout_alignEnd="@id/beg_ex1"
         android:layout_alignBottom="@id/beg_ex1"
         />
@@ -83,47 +58,21 @@
         android:drawableStart="@drawable/baseline_music_note_24"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:fontFamily="@font/poppins_medium"
         android:layout_alignTop="@id/beg_ex1"
         android:layout_marginTop="120dp"
         android:background="@drawable/exercise_button_design"/>
 
     <ImageView
-        android:id="@+id/play_btn2"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:src="@drawable/play"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="25dp"
         android:layout_alignEnd="@id/beg_ex2"
         android:layout_alignBottom="@id/beg_ex2"
         />
 
-    <Button
-        android:id="@+id/beg_ex3"
-        android:onClick="goToAnExercise3"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Faded"
-        android:drawableStart="@drawable/baseline_music_note_24"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_alignTop="@id/beg_ex2"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/exercise_button_design"/>
-
-    <ImageView
-        android:id="@+id/play_btn3"
-        android:layout_width="100dp"
-        android:layout_height="45dp"
-        android:src="@drawable/play"
-        android:layout_marginBottom="28dp"
-        android:layout_alignEnd="@id/beg_ex3"
-        android:layout_alignBottom="@id/beg_ex3"
-        />
 
 
 </RelativeLayout>

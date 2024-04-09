@@ -40,7 +40,6 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
     public static boolean open2;
     ProgressBar progressBar;
     GifImageView gif;
-    String[] sequence1 = {"c4", "d4", "e4", "f4", "g4", "a4", "b4_", "c5"};
     TreeMap<Integer, String> notes = new TreeMap<>();
 
     String[] sequence2;
@@ -210,7 +209,7 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
     }
 
     public void goToAnActivity(View view) {
-        Intent intent = new Intent(this, ExercisesActivity.class);
+        Intent intent = new Intent(this, BeginnerActivity.class);
         soundPool.release();
         startActivity(intent);
     }
