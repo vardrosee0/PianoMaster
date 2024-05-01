@@ -31,4 +31,7 @@
     <string name="skip_btn">Get a perfect pitch on the piano as a beginner, intermediate or advanced</string>
     <string name="next_btn">Challenging and mind-provoking exercises</string>
     <string name="start">Lets get started!</string>
+
+    <!-- Strings used for notes learning-->
+
 </resources>

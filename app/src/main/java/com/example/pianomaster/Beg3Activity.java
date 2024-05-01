@@ -185,22 +185,22 @@ public class Beg3Activity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        playSound(g4, 1000);
-        playSound(g4, 1500);
-        playSound(g4, 2000);
-        playSound(b4_, 2500);
-        playSound(e5, 3000);
-        playSound(e5, 3500);
-        playSound(e5, 4000);
-        playSound(d5, 4500);
-        playSound(b4_, 5000);
-        playSound(b4_, 5500);
-        playSound(b4_, 6000);
-        playSound(b4_, 6500);
-        playSound(f4sh, 7000);
-        playSound(f4sh, 7500);
-        playSound(f4sh, 8000);
-        playSound(e4, 8500);
+        playSound(g4, 1000, b20);
+        playSound(g4, 1500, b20);
+        playSound(g4, 2000, b20);
+        playSound(b4_, 2500, b24);
+        playSound(e5, 3000, b29);
+        playSound(e5, 3500, b29);
+        playSound(e5, 4000, b29);
+        playSound(d5, 4500, b27);
+        playSound(b4_, 5000, b24);
+        playSound(b4_, 5500, b24);
+        playSound(b4_, 6000, b24);
+        playSound(b4_, 6500, b24);
+        playSound(f4sh, 7000, b19);
+        playSound(f4sh, 7500, b19);
+        playSound(f4sh, 8000, b19);
+        playSound(e4, 8500, b17);
 
 
         final Handler handler = new Handler();
@@ -224,13 +224,26 @@ public class Beg3Activity extends AppCompatActivity implements View.OnClickListe
 
 
     //playing notes
-    public void playSound(int note, long millis) {
+    public void playSound(int note, long millis, Button btn) {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 soundPool.play(note, 1, 1, 0, 0, 1);
-
+                btn.setBackgroundResource(R.drawable.selected);
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (btn == b20) {
+                            btn.setBackgroundResource(R.drawable.right_selector);
+                        } else if (btn == b19){
+                            btn.setBackgroundResource(R.drawable.wrong_black_selector);
+                        }else {
+                            btn.setBackgroundResource(R.drawable.wrong_selector);
+                        }
+                    }
+                }, 200);
             }
         }, millis);
     }

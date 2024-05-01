@@ -24,54 +24,107 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider" />
 
-
     <Button
         android:id="@+id/beg_ex1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignTop="@id/divider"
         android:background="@drawable/exercise_button_design"
         android:drawableStart="@drawable/baseline_music_note_24"
         android:fontFamily="@font/poppins_medium"
         android:padding="10dp"
-        android:text="C major"
+        android:text="Barbie Girl"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="18dp" />
 
     <ImageView
+        android:id="@+id/play_btn"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:src="@drawable/play"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="28dp"
         android:layout_alignEnd="@id/beg_ex1"
         android:layout_alignBottom="@id/beg_ex1"
         />
 
     <Button
         android:id="@+id/beg_ex2"
-        android:onClick="goToAnExercise2"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="Twinkle Twinkle Little Star"
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/beg_ex1"
+        android:background="@drawable/exercise_button_design"
         android:drawableStart="@drawable/baseline_music_note_24"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        android:text="Pirates of the Caribbean"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textSize="18dp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_alignTop="@id/beg_ex1"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/exercise_button_design"/>
+        android:textSize="18dp" />
 
     <ImageView
+        android:id="@+id/play_btn2"
         android:layout_width="100dp"
         android:layout_height="45dp"
         android:src="@drawable/play"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="28dp"
         android:layout_alignEnd="@id/beg_ex2"
         android:layout_alignBottom="@id/beg_ex2"
         />
+
+    <Button
+        android:id="@+id/beg_ex3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/beg_ex2"
+        android:background="@drawable/exercise_button_design"
+        android:drawableStart="@drawable/baseline_music_note_24"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        android:text="Blinding Lights"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/play_btn3"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:src="@drawable/play"
+        android:layout_marginBottom="28dp"
+        android:layout_alignEnd="@id/beg_ex3"
+        android:layout_alignBottom="@id/beg_ex3"
+        />
+
+    <Button
+        android:id="@+id/beg_ex4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/beg_ex3"
+        android:background="@drawable/exercise_button_design"
+        android:drawableStart="@drawable/baseline_music_note_24"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        android:text="Senorita"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/play_btn4"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:src="@drawable/play"
+        android:layout_marginBottom="28dp"
+        android:layout_alignEnd="@id/beg_ex4"
+        android:layout_alignBottom="@id/beg_ex4"
+        />
+
+
 
 
 

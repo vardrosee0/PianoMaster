@@ -24,6 +24,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/back_b"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -48,5 +49,15 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Skip"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,7 @@
     <Button
         android:id="@+id/learn_notes"
         android:padding="10dp"
+        android:clickable="false"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:drawableStart="@drawable/notes_icon"
@@ -38,7 +39,7 @@
         android:fontFamily="@font/poppins_medium"
         android:layout_marginTop="100dp"
         android:backgroundTint="@color/hot_pink"
-        android:background="@drawable/exercise_button_design"/>
+        android:background="@drawable/exercise_button_design" />
 
 
     <View
@@ -123,6 +124,31 @@
         android:layout_marginBottom="28dp"
         android:layout_alignEnd="@id/beg_ex3"
         android:layout_alignBottom="@id/beg_ex3"
+        />
+
+    <Button
+        android:id="@+id/beg_ex4"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Happy Birthday"
+        android:drawableStart="@drawable/baseline_music_note_24"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins_medium"
+        android:layout_alignTop="@id/beg_ex3"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/exercise_button_design"/>
+
+    <ImageView
+        android:id="@+id/play_btn4"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:src="@drawable/play"
+        android:layout_marginBottom="28dp"
+        android:layout_alignEnd="@id/beg_ex4"
+        android:layout_alignBottom="@id/beg_ex4"
         />
 
 

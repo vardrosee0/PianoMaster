@@ -180,25 +180,25 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
         b5_ = soundPool.load(this, R.raw.b5, 1);
 
 
-        playSound(g4, 1000);
-        playSound(d4, 1700);
-        playSound(g4, 1900);
-        playSound(d4, 2600);
-        playSound(g4, 2800);
-        playSound(d4, 3000);
-        playSound(g4, 3200);
-        playSound(b4_, 3400);
-        playSound(d5, 3600);
+        playSound(g4, 1000, b20);
+        playSound(d4, 1700, b15);
+        playSound(g4, 1900, b20);
+        playSound(d4, 2600, b15);
+        playSound(g4, 2800, b20);
+        playSound(d4, 3000, b15);
+        playSound(g4, 3200, b20);
+        playSound(b4_, 3400, b24);
+        playSound(d5, 3600, b27);
 
-        playSound(c5, 4600);
-        playSound(a4, 5300);
-        playSound(c5, 5500);
-        playSound(a4, 6200);
-        playSound(c5, 6400);
-        playSound(a4, 6600);
-        playSound(f4sh, 6800);
-        playSound(a4, 7000);
-        playSound(d4, 7200);
+        playSound(c5, 4600, b25);
+        playSound(a4, 5300, b22);
+        playSound(c5, 5500, b25);
+        playSound(a4, 6200, b22);
+        playSound(c5, 6400, b25);
+        playSound(a4, 6600, b22);
+        playSound(f4sh, 6800, b19);
+        playSound(a4, 7000, b22);
+        playSound(d4, 7200, b15);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -243,22 +243,35 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
     }
 
 
-    public void playSound(int note, long millis) {
+    public void playSound(int note, long millis, Button btn) {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 soundPool.play(note, 1, 1, 0, 0, 1);
-
+                btn.setBackgroundResource(R.drawable.selected);
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (btn == b25) {
+                            btn.setBackgroundResource(R.drawable.right_selector);
+                        } else if (btn == b19){
+                            btn.setBackgroundResource(R.drawable.wrong_black_selector);
+                        }else {
+                            btn.setBackgroundResource(R.drawable.wrong_selector);
+                        }
+                    }
+                }, 200);
             }
         }, millis);
-
     }
 
 
     // notes playing
     @Override
     public void onClick(View view) {
+        points.setText(String.valueOf(Exercise1Activity.points_amount));
         switch (view.getId()) {
             case R.id.k1:
                 Exercise1Activity.points_amount -= 10;

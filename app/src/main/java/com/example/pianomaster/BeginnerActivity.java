@@ -13,17 +13,21 @@ import java.util.HashMap;
 
 public class BeginnerActivity extends AppCompatActivity {
 
-    Button beg_ex1, beg_ex2;
+    Button beg_ex1, beg_ex2, learn_notes;
     ImageView img, img2, img3;
+    public static int for_notes = 0;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beginner);
+        for_notes = 1;
 
         beg_ex1 = findViewById(R.id.beg_ex1);
         beg_ex2 = findViewById(R.id.beg_ex2);
+        learn_notes = findViewById(R.id.learn_notes);
         img = findViewById(R.id.play_btn);
         img2 = findViewById(R.id.play_btn2);
         img3 = findViewById(R.id.play_btn3);
@@ -59,6 +63,12 @@ public class BeginnerActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    /*
+    public void learnNotes(View view) {
+        Intent intent = new Intent(this, LearningNotesActivity.class);
+        startActivity(intent);
+
+    }*/
 
 
 }

@@ -16,17 +16,29 @@
         android:theme="@style/Theme.PianoMaster"
         tools:targetApi="31">
         <activity
-            android:name=".BeginnerActivity"
+            android:name=".MainPageActivity"
             android:exported="false" />
+        <activity
+            android:name=".BeginnerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".LearningNotesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".IntermediateActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AdvancedActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QueryActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -75,7 +87,23 @@
         <activity
             android:name=".Beg3Activity"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Inter1Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Inter2Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Inter3Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Inter4Activity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

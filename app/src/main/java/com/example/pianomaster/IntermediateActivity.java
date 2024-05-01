@@ -21,8 +21,26 @@ public class IntermediateActivity extends AppCompatActivity {
 
     }
 
+    public void goToAnExercise1(View view) {
+        Intent intent = new Intent(this, Inter1Activity.class);
+        startActivity(intent);
+
+    }
+
+    public void goToAnExercise2(View view) {
+        Intent intent = new Intent(this, Inter2Activity.class);
+        startActivity(intent);
+
+    }
+
     public void goToAnExercise3(View view) {
-        Intent intent = new Intent(this, Exercise3Activity.class);
+        Intent intent = new Intent(this, Inter3Activity.class);
+        startActivity(intent);
+
+    }
+
+    public void goToAnExercise4(View view) {
+        Intent intent = new Intent(this, Inter4Activity.class);
         startActivity(intent);
 
     }
