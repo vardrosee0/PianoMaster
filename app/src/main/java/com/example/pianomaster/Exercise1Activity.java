@@ -336,7 +336,7 @@ public class Exercise1Activity extends AppCompatActivity implements View.OnClick
                 playSound(b27, b25, pos, "c5");
                 if (progressBar.getMax() == progressBar.getProgress()) {
                     inform.setVisibility(View.INVISIBLE);
-                    congrats.setText("Perfect! New level is unlocked.");
+                    congrats.setText("Incredible!!");
                     open2 = true;
                 }
                 b27.setBackgroundResource(R.drawable.wrong_selector);

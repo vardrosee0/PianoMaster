@@ -45,5 +45,11 @@ public class IntermediateActivity extends AppCompatActivity {
 
     }
 
+    public void goToTheMainPage(View view) {
+        Intent intent = new Intent(this, HomePageActivity.class);
+        startActivity(intent);
+
+    }
+
 
 }

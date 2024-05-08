@@ -3,11 +3,15 @@ package com.example.pianomaster;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
 public class SplashActivity extends AppCompatActivity {
+
+    static boolean done;
+    static SharedPreferences settings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,9 +21,26 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, OnBoarding.class);
-                startActivity(intent);
+                settings=getSharedPreferences("prefs",0);
+                boolean firstRun=settings.getBoolean("firstRun",true);
+                done=settings.getBoolean("done",false);
+                if(firstRun || !done)//if running for first time
+                //Splash will load for first time
+                {
+                    SharedPreferences.Editor editor=settings.edit();
+                    editor.putBoolean("firstRun",false);
+                    editor.apply();
+                    Intent i=new Intent(SplashActivity.this, OnBoarding.class);
+                    startActivity(i);
+                    finish();
+                }
+                else
+                {
+                    Intent a=new Intent(SplashActivity.this, HomePageActivity.class);
+                    startActivity(a);
+                    finish();
+                }
             }
-        }, 2500);
+        }, 2000);
     }
 }

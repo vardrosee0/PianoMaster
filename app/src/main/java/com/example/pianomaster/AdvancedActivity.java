@@ -21,11 +21,19 @@ public class AdvancedActivity extends AppCompatActivity {
 
     }
 
-    public void goToAnExercise2(View view) {
-        Intent intent = new Intent(this, Exercise2Activity.class);
+    public void goToAnExercise1(View view) {
+        Intent intent = new Intent(this, Adv1Activity.class);
         startActivity(intent);
 
     }
+
+    public void goToTheMainPage(View view) {
+        Intent intent = new Intent(this, HomePageActivity.class);
+        startActivity(intent);
+
+    }
+
+
 
 
 }

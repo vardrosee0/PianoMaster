@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class BeginnerActivity extends AppCompatActivity {
 
     Button beg_ex1, beg_ex2, learn_notes;
-    ImageView img, img2, img3;
+    ImageView img, img2, img3, img4;
     public static int for_notes = 0;
 
 
@@ -31,6 +31,7 @@ public class BeginnerActivity extends AppCompatActivity {
         img = findViewById(R.id.play_btn);
         img2 = findViewById(R.id.play_btn2);
         img3 = findViewById(R.id.play_btn3);
+        img4 = findViewById(R.id.play_btn4);
 
         if (Exercise1Activity.open2) {
             img.setImageResource(R.drawable.repeat);
@@ -42,6 +43,10 @@ public class BeginnerActivity extends AppCompatActivity {
 
         if (Beg3Activity.open_beg3) {
             img3.setImageResource(R.drawable.repeat);
+        }
+
+        if (Beg4Activity.open_beg4) {
+            img4.setImageResource(R.drawable.repeat);
         }
 
     }
@@ -63,12 +68,24 @@ public class BeginnerActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void goToAnExercise4(View view) {
+        Intent intent = new Intent(this, Beg4Activity.class);
+        startActivity(intent);
+
+    }
     /*
     public void learnNotes(View view) {
         Intent intent = new Intent(this, LearningNotesActivity.class);
         startActivity(intent);
 
     }*/
+
+    public void goToTheMainPage(View view) {
+        Intent intent = new Intent(this, HomePageActivity.class);
+        startActivity(intent);
+
+    }
 
 
 }

@@ -326,7 +326,7 @@ public class Beg3Activity extends AppCompatActivity implements View.OnClickListe
                 b20.setBackgroundResource(R.drawable.wrong_selector);
                 if (progressBar.getMax() == progressBar.getProgress()) {
                     inform.setVisibility(View.INVISIBLE);
-                    congrats.setText("Perfect! New level is unlocked.");
+                    congrats.setText("Incredible!!");
                     open_beg3 = true;
                 }
                 soundPool.play(e4, 1, 1, 0, 0, 1);

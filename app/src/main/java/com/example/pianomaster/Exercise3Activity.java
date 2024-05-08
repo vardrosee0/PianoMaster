@@ -321,7 +321,7 @@ public class Exercise3Activity extends AppCompatActivity implements View.OnClick
                     case 18: playSound(b13, b15, pos, "d4");
                         if (progressBar.getMax() == progressBar.getProgress()) {
                             inform.setVisibility(View.INVISIBLE);
-                            congrats.setText("Incredible! New level is unlocked.");
+                            congrats.setText("Incredible!!");
                             open4 = true;
                         }
                         b13.setBackgroundResource(R.drawable.wrong_selector);

@@ -26,6 +26,7 @@
 
     <Button
         android:id="@+id/beg_ex1"
+        android:onClick="goToAnExercise1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
@@ -122,6 +123,16 @@
         android:layout_marginBottom="28dp"
         android:layout_alignEnd="@id/beg_ex4"
         android:layout_alignBottom="@id/beg_ex4"
+        />
+
+    <ImageView
+        android:id="@+id/home_btn"
+        android:onClick="goToTheMainPage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/home"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         />
 
 

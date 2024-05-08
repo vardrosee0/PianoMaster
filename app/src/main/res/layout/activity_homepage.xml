@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity"
+    android:background="@color/pink"
+    android:padding="@dimen/layer_padding">
+
+    <TextView
+        android:id="@+id/beginner_text"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textColor="@color/black"
+        android:text="Home"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="50dp"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <Button
+        android:id="@+id/beg_page"
+        android:onClick="goToBeg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignTop="@id/divider"
+        android:background="@drawable/exercise_button_design"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        android:backgroundTint="@color/hot_pink"
+        android:text="Beginner Page"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+
+    <Button
+        android:id="@+id/int_page"
+        android:onClick="goToInt"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/beg_page"
+        android:background="@drawable/exercise_button_design"
+        android:fontFamily="@font/poppins_medium"
+        android:backgroundTint="@color/cute_purple"
+        android:padding="10dp"
+        android:text="Intermediate Page"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+
+    <Button
+        android:id="@+id/adv_page"
+        android:onClick="goToAdv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="120dp"
+        android:layout_alignTop="@id/int_page"
+        android:background="@drawable/exercise_button_design"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="10dp"
+        android:text="Advanced Page"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/dancing_notes_cute"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+/>
+
+
+
+
+
+
+</RelativeLayout>

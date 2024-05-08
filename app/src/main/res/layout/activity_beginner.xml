@@ -25,36 +25,12 @@
         android:background="?android:attr/listDivider" />
 
     <Button
-        android:id="@+id/learn_notes"
-        android:padding="10dp"
-        android:clickable="false"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:drawableStart="@drawable/notes_icon"
-        android:layout_alignTop="@id/beginner_text"
-        android:text="Learn notes"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="18dp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginTop="100dp"
-        android:backgroundTint="@color/hot_pink"
-        android:background="@drawable/exercise_button_design" />
-
-
-    <View
-        android:id="@+id/divider1"
-        android:layout_width="match_parent"
-        android:layout_marginTop="210dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider" />
-
-    <Button
         android:id="@+id/beg_ex1"
+        android:layout_alignEnd="@id/divider"
         android:onClick="goToAnExercise1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="226dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/exercise_button_design"
         android:drawableStart="@drawable/baseline_music_note_24"
         android:fontFamily="@font/poppins_medium"
@@ -128,6 +104,7 @@
 
     <Button
         android:id="@+id/beg_ex4"
+        android:onClick="goToAnExercise4"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -149,6 +126,16 @@
         android:layout_marginBottom="28dp"
         android:layout_alignEnd="@id/beg_ex4"
         android:layout_alignBottom="@id/beg_ex4"
+        />
+
+    <ImageView
+        android:id="@+id/home_btn"
+        android:onClick="goToTheMainPage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/home"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         />
 
 

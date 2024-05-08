@@ -1,8 +1,11 @@
 package com.example.pianomaster;
 
+import static com.example.pianomaster.SplashActivity.settings;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +16,7 @@ import org.w3c.dom.Text;
 
 public class QueryActivity extends AppCompatActivity {
     Button btn1, btn2, btn3;
-    Boolean bt1 = false, bt2 = false, bt3 = false;
+    static Boolean bt1 = false, bt2 = false, bt3 = false, main = false;
     ImageView next;
     TextView leveltext, desc_text;
 
@@ -75,20 +78,11 @@ public class QueryActivity extends AppCompatActivity {
     }
 
     public void goToTheMainPage(View view) {
-        if (bt1) {
-            Intent intent = new Intent(this, BeginnerActivity.class);
-            startActivity(intent);
-        }
-
-        if (bt2) {
-            Intent intent = new Intent(this, IntermediateActivity.class);
-            startActivity(intent);
-        }
-
-        if (bt3) {
-            Intent intent = new Intent(this, AdvancedActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(this, HomePageActivity.class);
+        startActivity(intent);
+        SharedPreferences.Editor editor= settings.edit();
+        editor.putBoolean("done",true);
+        editor.apply();
 
 
     }

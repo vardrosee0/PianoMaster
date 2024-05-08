@@ -203,31 +203,31 @@ public class Inter2Activity extends AppCompatActivity implements View.OnClickLis
         playSound(g4, 2000, b20);
         playSound(f4sh, 2200, b19);
         playSound(e4, 2600, b17);
-        playSound(b4_, 3300, b24);
-        playSound(a4, 3700, b22);
-        playSound(f4sh, 4700, b19);
-        playSound(e4, 5700, b17);
-        playSound(g4, 6300, b20);
-        playSound(f4sh, 6500, b19);
-        playSound(d4sh, 6900, b16);
-        playSound(f4, 7600, b18);
-        playSound(b3_, 8000, b12);
-        playSound(b3_, 10000, b12);
-        playSound(e4, 10400, b17);
-        playSound(g4, 11000, b20);
-        playSound(f4sh, 11200, b19);
-        playSound(e4, 11600, b17);
-        playSound(b4_, 12300, b24);
-        playSound(d5, 12700, b27);
-        playSound(c5sh, 13400, b26);
-        playSound(c5, 13800, b25);
-        playSound(g4sh, 14500, b21);
-        playSound(c5, 14900, b25);
-        playSound(b4_, 15600, b24);
-        playSound(a4sh, 15800, b23);
-        playSound(b3_, 16200, b12);
-        playSound(g4, 16900, b20);
-        playSound(e4, 17300, b17);
+        playSound(b4_, 3400, b24);
+        playSound(a4, 3800, b22);
+        playSound(f4sh, 5000, b19);
+        playSound(e4, 6200, b17);
+        playSound(g4, 6800, b20);
+        playSound(f4sh, 7000, b19);
+        playSound(d4sh, 7400, b16);
+        playSound(f4, 8200, b18);
+        playSound(b3_, 8600, b12);
+        playSound(b3_, 10600, b12);
+        playSound(e4, 11000, b17);
+        playSound(g4, 11600, b20);
+        playSound(f4sh, 11800, b19);
+        playSound(e4, 12200, b17);
+        playSound(b4_, 13000, b24);
+        playSound(d5, 13400, b27);
+        playSound(c5sh, 14200, b26);
+        playSound(c5, 14600, b25);
+        playSound(g4sh, 15400, b21);
+        playSound(c5, 15800, b25);
+        playSound(b4_, 16400, b24);
+        playSound(a4sh, 16600, b23);
+        playSound(b3_, 17000, b12);
+        playSound(g4, 17800, b20);
+        playSound(e4, 18200, b17);
 
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -237,7 +237,7 @@ public class Inter2Activity extends AppCompatActivity implements View.OnClickLis
                 progressBar.setVisibility(View.VISIBLE);
                 inform.setText("Play!");
             }
-        }, 17300);
+        }, 18000);
 
     }
 
@@ -414,7 +414,7 @@ public class Inter2Activity extends AppCompatActivity implements View.OnClickLis
                         b24.setBackgroundResource(R.drawable.wrong_selector);
                         if (progressBar.getMax() == progressBar.getProgress()) {
                             inform.setVisibility(View.INVISIBLE);
-                            congrats.setText("Perfect! New level is unlocked.");
+                            congrats.setText("Incredible!!");
                             open_beg3 = true;
                         }
 
