@@ -25,23 +25,6 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     };
 
-    int images2[] = {
-
-            R.drawable.c_note,
-            R.drawable.c_sharp,
-            R.drawable.d_note,
-            R.drawable.d_sharp,
-            R.drawable.e_note,
-            R.drawable.f_note,
-            R.drawable.f_sharp,
-            R.drawable.g_note,
-            R.drawable.g_sharp,
-            R.drawable.a_note,
-            R.drawable.b_flat,
-            R.drawable.b_note,
-
-    };
-
     int headings[] = {
 
             R.string.heading_one,
@@ -66,9 +49,6 @@ public class ViewPagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        if(BeginnerActivity.for_notes == 1) {
-            return  images2.length;
-        }
         return  headings.length;
     }
 
@@ -88,13 +68,9 @@ public class ViewPagerAdapter extends PagerAdapter {
         TextView slideHeading = (TextView) view.findViewById(R.id.texttitle);
         TextView slideDesciption = (TextView) view.findViewById(R.id.textdeccription);
 
-        if (BeginnerActivity.for_notes == 1) {
-            slidetitleimage.setImageResource(images2[position]);
-        } else {
-            slidetitleimage.setImageResource(images[position]);
-            slideHeading.setText(headings[position]);
-            slideDesciption.setText(description[position]);
-        }
+        slidetitleimage.setImageResource(images[position]);
+        slideHeading.setText(headings[position]);
+        slideDesciption.setText(description[position]);
 
 
 

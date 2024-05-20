@@ -18,15 +18,15 @@
 
 
     <string name="heading_one">Welcome to our app!</string>
-    <string name="heading_two">You will gain new valuable skills!</string>
-    <string name="heading_three">Keep track of your progress!</string>
-    <string name="heading_fourth">Have fun and share your experience with friends!</string>
+    <string name="heading_two">Listen carefully and memorize the sequence of the notes.</string>
+    <string name="heading_three">Play the songs and collect coins!</string>
+    <string name="heading_fourth">Practice and play beautiful melodies! WISH YOU LUCK!</string>
 
 
-    <string name="desc_one">Our app will guide you on your journey of a musician through challenging exercises.</string>
-    <string name="desc_two">This list can be endless: listening, focus and concentration, piano notes recognition(musical pitch), singing skills.</string>
-    <string name="desc_three">If you start as a beginner, you have the opportunity to improve and reach to the advanced level.</string>
-    <string name="desc_fourth">You can make any event more exciting and colorful with your musical skills.</string>
+    <string name="desc_one">Learn how to play your favorite songs on the piano!</string>
+    <string name="desc_two">Use the hint to memorize the melody. Also try to remember it by the notes.</string>
+    <string name="desc_three">Purchase new songs by collecting coins.</string>
+    <string name="desc_fourth">Share your experience with friends and enjoy! </string>
 
     <string name="skip_btn">Get a perfect pitch on the piano as a beginner, intermediate or advanced</string>
     <string name="next_btn">Challenging and mind-provoking exercises</string>

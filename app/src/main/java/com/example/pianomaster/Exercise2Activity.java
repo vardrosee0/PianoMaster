@@ -1,6 +1,7 @@
 package com.example.pianomaster;
 
 import android.content.Intent;
+import static com.example.pianomaster.HomePageActivity.points_amount;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,17 +16,23 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.TreeMap;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class Exercise2Activity extends AppCompatActivity implements View.OnClickListener{
     Button b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19;
-    TextView congrats, points, inform;
-    int pos = 1;
+    TextView congrats, points, playtext;
+    int pos = 1, points1 = 0;
     ProgressBar progressBar;
     TreeMap<Integer, String> notes = new TreeMap<>();
 
     Button b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31, b32, b33, b34, b35, b36;
-    int a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
+    int tick, win, a3, a3sh, a4, a4sh, a5, a5sh, b3_, b4_, b5_, c3, c3sh, c4, c4sh, c5, c5sh, c6, d3, d3sh;
     int d4, d4sh, d5, d5sh, e3, e4, e5, f3, f3sh, f4, f4sh, f5, f5sh, g3, g3sh, g4, g4sh, g5, g5sh;
     private SoundPool soundPool;
+    int combo = 0;
+    GifImageView gif;
+    boolean done = false;
+    Button[] white_buttons, black_buttons;
     public static boolean open3;
 
 
@@ -37,12 +44,13 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
 
         congrats = findViewById(R.id.congrats);
         points = findViewById(R.id.points);
-        inform = findViewById(R.id.textView3);
+        playtext = findViewById(R.id.playtext);
+        gif = findViewById(R.id.musicgif);
 
         progressBar = findViewById(R.id.progressBar);
-        progressBar.setMax(280);
+        progressBar.setMax(210);
 
-        points.setText(String.valueOf(Exercise1Activity.points_amount));
+        points.setText(String.valueOf(points_amount));
 
         notes.put(1, "c4");
         notes.put(2, "c4");
@@ -98,45 +106,19 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
         b35 = findViewById(R.id.b15);
         b36 = findViewById(R.id.k21);
 
+        white_buttons = new Button[]{b1, b3, b5, b6, b8, b10, b12, b13, b15, b17, b18, b20, b22, b24, b25, b27, b28, b29, b30, b32, b34, b36};
+        black_buttons = new Button[]{b2, b4, b7, b9, b11, b14, b16, b19, b21, b23, b26, b28, b31, b33, b35};
 
-        b1.setOnClickListener(this);
-        b2.setOnClickListener(this);
-        b3.setOnClickListener(this);
-        b4.setOnClickListener(this);
-        b5.setOnClickListener(this);
-        b6.setOnClickListener(this);
-        b7.setOnClickListener(this);
-        b8.setOnClickListener(this);
-        b9.setOnClickListener(this);
-        b10.setOnClickListener(this);
-        b11.setOnClickListener(this);
-        b12.setOnClickListener(this);
-        b13.setOnClickListener(this);
-        b14.setOnClickListener(this);
-        b15.setOnClickListener(this);
-        b16.setOnClickListener(this);
-        b17.setOnClickListener(this);
-        b18.setOnClickListener(this);
-        b19.setOnClickListener(this);
-        b20.setOnClickListener(this);
-        b21.setOnClickListener(this);
-        b22.setOnClickListener(this);
-        b23.setOnClickListener(this);
-        b24.setOnClickListener(this);
-        b25.setOnClickListener(this);
-        b26.setOnClickListener(this);
-        b27.setOnClickListener(this);
-        b28.setOnClickListener(this);
-        b29.setOnClickListener(this);
-        b30.setOnClickListener(this);
-        b31.setOnClickListener(this);
-        b32.setOnClickListener(this);
-        b33.setOnClickListener(this);
-        b34.setOnClickListener(this);
-        b35.setOnClickListener(this);
-        b36.setOnClickListener(this);
+        for (Button button: white_buttons) {
+            button.setOnClickListener(this);
+        }
+        for (Button button: black_buttons) {
+            button.setOnClickListener(this);
+        }
 
         soundPool = new SoundPool.Builder().setMaxStreams(6).build();
+        tick = soundPool.load(this, R.raw.clock_ticking, 1);
+        win = soundPool.load(this, R.raw.win, 1);
 
         c3 = soundPool.load(this, R.raw.c3, 1);
         c3sh = soundPool.load(this, R.raw.c3sh, 1);
@@ -175,53 +157,138 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
         a5sh = soundPool.load(this, R.raw.a5sh, 1);
         b5_ = soundPool.load(this, R.raw.b5, 1);
 
+        VariableClass.delayed_text(playtext, "3", 1000);
+        playSound(tick, 1000);
+        VariableClass.delayed_text(playtext, "2", 2000);
+        playSound(tick, 2000);
+        VariableClass.delayed_text(playtext, "1", 3000);
+        playSound(tick, 3000);
 
-        playSound(c4, 1000, b13);
-        playSound(c4, 1400, b13);
-        playSound(g4, 1800, b20);
-        playSound(g4, 2200, b20);
-        playSound(a4, 2600, b22);
-        playSound(a4, 3000, b22);
-        playSound(g4, 3400, b20);
+        final Handler handler4 = new Handler();
+        handler4.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                playtext.setVisibility(View.INVISIBLE);
+                gif.setVisibility(View.VISIBLE);
+                playSound(c4, 1000, b13);
+                playSound(c4, 1400, b13);
+                playSound(g4, 1800, b20);
+                playSound(g4, 2200, b20);
+                playSound(a4, 2600, b22);
+                playSound(a4, 3000, b22);
+                playSound(g4, 3400, b20);
 
-        playSound(f4, 4100, b18);
-        playSound(f4, 4500, b18);
-        playSound(e4, 4900, b17);
-        playSound(e4, 5300, b17);
-        playSound(d4, 5700, b15);
-        playSound(d4, 6100, b15);
-        playSound(c4, 6500, b13);
+                playSound(f4, 4100, b18);
+                playSound(f4, 4500, b18);
+                playSound(e4, 4900, b17);
+                playSound(e4, 5300, b17);
+                playSound(d4, 5700, b15);
+                playSound(d4, 6100, b15);
+                playSound(c4, 6500, b13);
+            }
+        }, 3500);
+
         final Handler handler = new Handler();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                gif.setVisibility(View.INVISIBLE);
+                playtext.setVisibility(View.VISIBLE);
+                playtext.setText("Play!");
                 progressBar.setVisibility(View.VISIBLE);
-                inform.setText("Play!");
+                for (Button button: white_buttons) {
+                    button.setEnabled(true);
+                }
+                for (Button button: black_buttons) {
+                    button.setEnabled(true);
+                }
             }
-        }, 6800);
+        }, 10000);
 
     }
 
     public void goToAnActivity(View view) {
         soundPool.release();
-        Intent intent = new Intent(this, BeginnerActivity.class);
+        Intent intent = new Intent(this, HomePageActivity.class);
         startActivity(intent);
     }
 
+    public void playSound(int note, long millis) {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                soundPool.play(note, 1, 1, 0, 0, 1);
+            }
+        }, millis);
+    }
+
+
     public void playSound(Button next_key, Button current_key, int pos1, String note) {
+        current_key.setEnabled(true);
         if (Objects.equals(notes.get(pos1), note)){
-            next_key.setBackgroundResource(R.drawable.right_selector);
-            pos++;
-            Exercise1Activity.points_amount += 10;
-            points.setText(String.valueOf(Exercise1Activity.points_amount));
-            progressBar.incrementProgressBy(20);
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    current_key.setBackgroundResource(R.drawable.wrong_selector);
+            progressBar.incrementProgressBy(15);
+            if (pos == notes.size()) {
+                if (!done) {
+                    points1 += (combo * 5);
+                    points_amount +=  (combo * 5);
+                    points.setText(String.valueOf(points_amount));
+                    done = true;
+                    playtext.setText("Incredible! You got " + String.valueOf(points1) + " coins.");
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            soundPool.play(win, 1, 1, 0, 0, 1);
+                        }
+                    }, 100);
+                    for (Button button: white_buttons) {
+                        button.setBackgroundResource(R.drawable.press_and_normal_selector);
+                    }
+                    for (Button button: black_buttons) {
+                        button.setBackgroundResource(R.drawable.black_key_selector);
+                    }
+                } else {
+                    playtext.setText("Incredible! You got " + String.valueOf(points1) + " coins.");
                 }
-            }, 100);
+
+                open3 = true;
+            } else {
+                next_key.setBackgroundResource(R.drawable.right_selector);
+                pos++;
+                combo += 1;
+                points1 += (combo * 5);
+                points_amount +=  (combo * 5);
+                points.setText(String.valueOf(points_amount));
+                playtext.setText("Great! x" + combo);
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        current_key.setBackgroundResource(R.drawable.wrong_selector);
+                    }
+                }, 100);
+            }
+
+        } else {
+            if (!done) {
+                combo =0;
+                playtext.setText("Try again!");
+                points1 -= 10;
+                points_amount -= 10;
+                points.setText(String.valueOf(points_amount));
+            }
+        }
+    }
+
+    public void playSoundW(Button current_key) {
+        if (!done) {
+            combo = 0;
+            playtext.setText("Try again!");
+            points1 -= 10;
+            points_amount -= 10;
+            points.setText(String.valueOf(points_amount));
         }
 
     }
@@ -238,70 +305,65 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (btn == b25) {
+                        if (btn == b13) {
                             btn.setBackgroundResource(R.drawable.right_selector);
                         } else {
                             btn.setBackgroundResource(R.drawable.wrong_selector);
                         }
                     }
-                }, 200);
+                }, 100);
             }
         }, millis);
     }
 
 
+
     // notes playing
     @Override
     public void onClick(View view) {
-        points.setText(String.valueOf(Exercise1Activity.points_amount));
         switch (view.getId()) {
             case R.id.k1:
-                Exercise1Activity.points_amount -= 10;
                 soundPool.play(c3, 1, 1, 0, 0, 1);
+                playSoundW(b1);
                 break;
             case R.id.k2:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b3);
                 soundPool.play(d3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k3:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b5);
                 soundPool.play(e3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k4:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b6);
                 soundPool.play(f3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k5:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b8);
                 soundPool.play(g3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k6:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b10);
                 soundPool.play(a3, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k7:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b12);
                 soundPool.play(b3_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k8:
                 switch (pos) {
-                    case 1: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20); break;
+                    case 1: playSound(b13, b10, pos, "c4");break;
                     case 2: playSound(b20, b13, pos, "c4"); break;
                     case 14:
                         playSound(b12, b13, pos, "c4");
-                        if (progressBar.getMax() == progressBar.getProgress()) {
-                            inform.setVisibility(View.INVISIBLE);
-                            congrats.setText("Incredible!!");
-                            open3 = true;
-                        }
-                        b12.setBackgroundResource(R.drawable.wrong_selector);
                         break;
+                    default:playSoundW(b13);
                 }
 
                 soundPool.play(c4, 1, 1, 0, 0, 1);
@@ -309,161 +371,160 @@ public class Exercise2Activity extends AppCompatActivity implements View.OnClick
 
             case R.id.k9:
                 switch (pos) {
-                    case 12: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
-                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 12: playSound(b15, b17, pos, "d4"); break;
                     case 13: playSound(b13, b15, pos, "d4"); break;
+                    default:playSoundW(b13);
                 }
                 soundPool.play(d4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k10:
                 switch (pos) {
-                    case 10: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
-                        points.setText(String.valueOf(Exercise1Activity.points_amount));break;
+                    case 10: playSound(b17, b18, pos, "e4"); break;
                     case 11: playSound(b15, b17, pos, "e4"); break;
+                    default:playSoundW(b13);
                 }
                 soundPool.play(e4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k11:
                 switch (pos) {
-                    case 8: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
-                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 8: playSound(b18, b20, pos, "f4"); break;
                     case 9: playSound(b17, b18, pos, "f4"); break;
+                    default:playSoundW(b13);
                 }
                 soundPool.play(f4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k12:
                 switch (pos) {
-                    case 3: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
-                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 3: playSound(b20, b13, pos, "g4"); break;
                     case 4: playSound(b22, b20, pos, "g4"); break;
                     case 7: playSound(b18, b20, pos, "g4");break;
+                    default:playSoundW(b13);
                 }
                 soundPool.play(g4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k13:
                 switch (pos) {
-                    case 5: pos++; Exercise1Activity.points_amount += 10; progressBar.incrementProgressBy(20);
-                        points.setText(String.valueOf(Exercise1Activity.points_amount)); break;
+                    case 5: playSound(b22, b20, pos, "a4"); break;
                     case 6: playSound(b20, b22, pos, "a4"); break;
+                    default:playSoundW(b13);
                 }
                 soundPool.play(a4, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k14:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b24);
                 soundPool.play(b4_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k15:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b25);
                 soundPool.play(c5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k16:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b27);
                 soundPool.play(d5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k17:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b29);
                 soundPool.play(e5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k18:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b30);
                 soundPool.play(f5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k19:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b32);
                 soundPool.play(g5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k20:
-                Exercise1Activity.points_amount -= 10;
-
+                playSoundW(b34);
                 soundPool.play(a5, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.k21:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b36);
                 soundPool.play(b5_, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b1:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b2);
                 soundPool.play(c3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b2:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b4);
                 soundPool.play(d3sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b3:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b7);
                 soundPool.play(f3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b4:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b9);
                 soundPool.play(g3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b5:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b11);
                 soundPool.play(a3sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b6:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b14);
                 soundPool.play(c4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b7:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b16);
                 soundPool.play(d4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b8:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b19);
                 soundPool.play(f4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b9:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b21);
                 soundPool.play(g4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b10:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b23);
                 soundPool.play(a4sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b11:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b26);
                 soundPool.play(c5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b12:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b28);
                 soundPool.play(d5sh, 1, 1, 0, 0, 1);
                 break;
             case R.id.b13:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b31);
                 soundPool.play(f5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b14:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b33);
                 soundPool.play(g5sh, 1, 1, 0, 0, 1);
                 break;
 
             case R.id.b15:
-                Exercise1Activity.points_amount -= 10;
+                playSoundW(b35);
                 soundPool.play(a5sh, 1, 1, 0, 0, 1);
                 break;
         }

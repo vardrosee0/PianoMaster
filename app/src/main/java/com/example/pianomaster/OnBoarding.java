@@ -1,5 +1,7 @@
 package com.example.pianomaster;
 
+import static com.example.pianomaster.SplashActivity.settings;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
@@ -50,7 +52,7 @@ public class OnBoarding extends AppCompatActivity {
         skipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(OnBoarding.this, QueryActivity.class);
+                Intent i = new Intent(OnBoarding.this, HomePageActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -63,7 +65,7 @@ public class OnBoarding extends AppCompatActivity {
                 if (getitem(0) < 3)
                     mSLideViewPager.setCurrentItem(getitem(1),true);
                 else {
-                    Intent i = new Intent(OnBoarding.this, QueryActivity.class);
+                    Intent i = new Intent(OnBoarding.this, HomePageActivity.class);
                     startActivity(i);
                     finish();
                 }

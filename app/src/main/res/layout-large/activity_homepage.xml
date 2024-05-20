@@ -22,11 +22,11 @@
 
     <ImageView
         android:id="@+id/coin"
-        android:layout_width="60dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/coins"
         android:layout_alignBottom="@id/divider"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="12dp"
         android:layout_alignParentEnd="true"/>
 
     <TextView
@@ -38,10 +38,10 @@
         android:layout_alignBottom="@id/divider"
         android:textSize="30dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppins_medium"
         android:layout_alignEnd="@id/coin"
-        android:layout_marginRight="45dp"
+        android:layout_marginRight="70dp"
         />
 
     <View
@@ -64,7 +64,7 @@
                 android:id="@+id/beg_ex1"
                 android:layout_width="match_parent"
                 android:clickable="false"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/exercise_button_design"
                 android:drawableStart="@drawable/baseline_music_note_24"
@@ -73,12 +73,13 @@
                 android:text="C major"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp" />
 
             <Button
                 android:onClick="goToBeg1"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -93,21 +94,22 @@
                 android:clickable="false"
                 android:padding="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:text="Twinkle Twinkle Little Star \n Mozart"
                 android:drawableStart="@drawable/baseline_music_note_24"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp"
+                android:textSize="25dp"
                 android:fontFamily="@font/poppins_light"
                 android:layout_alignTop="@id/beg_ex1"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:background="@drawable/exercise_button_design"/>
 
             <Button
                 android:onClick="goToBeg2"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -122,9 +124,9 @@
 
                 android:clickable="false"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:layout_alignTop="@id/beg_ex2"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:background="@drawable/exercise_button_design"
                 android:drawableStart="@drawable/baseline_music_note_24"
                 android:fontFamily="@font/poppins_light"
@@ -132,12 +134,13 @@
                 android:text="Faded \n Alan Walker"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp"  />
 
             <Button
                 android:id="@+id/ex3_coin"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -155,23 +158,24 @@
                 android:clickable="false"
                 android:padding="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:backgroundTint="@color/hot_pink"
+                android:layout_height="130dp"
                 android:text="Happy Birthday"
+                android:backgroundTint="@color/hot_pink"
                 android:drawableStart="@drawable/baseline_music_note_24"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp"
+                android:textSize="25dp"
                 android:fontFamily="@font/poppins_light"
                 android:layout_alignTop="@id/beg_ex3"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:background="@drawable/exercise_button_design"/>
 
             <Button
                 android:id="@+id/ex4_coin"
                 android:onClick="goToBeg4"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -185,8 +189,8 @@
             <Button
                 android:id="@+id/int_ex3"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="120dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="150dp"
                 android:clickable="false"
                 android:layout_alignTop="@id/int_ex2"
                 android:backgroundTint="@color/pretty"
@@ -197,13 +201,14 @@
                 android:text="Despacito \n   Luis Fonsi ft. Daddy Yankee"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp" />
 
             <Button
-                android:id="@+id/int3_coin"
+                android:id="@+id/int1_coin"
                 android:onClick="goToInt1"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -221,23 +226,24 @@
                 android:backgroundTint="@color/hot_pink"
                 android:clickable="false"
 
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:background="@drawable/exercise_button_design"
                 android:drawableStart="@drawable/baseline_music_note_24"
                 android:fontFamily="@font/poppins_light"
                 android:padding="10dp"
                 android:layout_alignTop="@id/int_ex1"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:text="Harry Potter \n   John Williams"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp" />
 
             <Button
                 android:id="@+id/hp_coin"
-                android:layout_width="80dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:onClick="goToInt2"
-                android:layout_height="30dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -253,25 +259,24 @@
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/hot_pink"
                 android:clickable="false"
-
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:background="@drawable/exercise_button_design"
                 android:drawableStart="@drawable/baseline_music_note_24"
                 android:fontFamily="@font/poppins_light"
                 android:padding="10dp"
                 android:layout_alignTop="@id/beg_ex4"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:text="Somewhere in my memory \n   John Williams"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp" />
 
             <Button
-                android:id="@+id/int1_coin"
-                android:layout_width="80dp"
+                android:id="@+id/int3_coin"
                 android:onClick="goToInt3"
-
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -287,24 +292,25 @@
                 android:id="@+id/int_ex4"
                 android:layout_width="match_parent"
                 android:clickable="false"
+                android:layout_height="130dp"
                 android:backgroundTint="@color/pretty"
-                android:layout_height="100dp"
                 android:background="@drawable/exercise_button_design"
                 android:drawableStart="@drawable/baseline_music_note_24"
                 android:fontFamily="@font/poppins_light"
                 android:padding="10dp"
                 android:layout_alignTop="@id/int_ex3"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:text="Blue Bird \n   Ikimonogakari"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp" />
 
             <Button
                 android:id="@+id/int4_coin"
-                android:layout_width="80dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:onClick="goToInt4"
-                android:layout_height="30dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
@@ -318,10 +324,10 @@
             <Button
                 android:id="@+id/adv_ex1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
                 android:clickable="false"
                 android:backgroundTint="@color/pretty"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:layout_alignTop="@id/int_ex4"
                 android:background="@drawable/exercise_button_design"
                 android:drawableStart="@drawable/baseline_music_note_24"
@@ -330,13 +336,14 @@
                 android:text="Barbie Girl \n   Aqua"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textSize="14dp" />
+                android:textSize="25dp" />
 
             <Button
                 android:id="@+id/adv1_coin"
                 android:onClick="goToAdv1"
-                android:layout_width="80dp"
-                android:layout_height="30dp"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:textSize="20dp"
                 android:background="@drawable/button_design2"
                 android:fontFamily="@font/poppins_light"
                 android:backgroundTint="@color/cute_purple"
